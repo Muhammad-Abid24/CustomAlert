@@ -32,7 +32,7 @@ Library ini menggunakan dependencies berikut:
 | Library | Version |
 |---------|---------|
 | AndroidX AppCompat | 1.7.1 |
-| AndroidX ConstraintLayout | - |
+| AndroidX ConstraintLayout | 2.2.1 |
 | Material Components | 1.13.0 |
 
 ## Installation
