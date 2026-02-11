@@ -1,4 +1,4 @@
-# Show Dialog
+# Android Library Custom Alert
 
 ![Android](https://img.shields.io/badge/Android-API%2029%2B-brightgreen)
 ![Gradle](https://img.shields.io/badge/Gradle-8.11.2-blue)
