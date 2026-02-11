@@ -8,7 +8,7 @@ Sebuah library Android yang sederhana dan mudah digunakan untuk menampilkan dial
 
 ## Tangkapan Layar
 
-<img width="458" height="814" alt="Image" src="https://github.com/user-attachments/assets/598bca1b-c7ba-47db-8b98-89bbd2d07e84" />
+<img width="458" height="814" alt="Image" src="https://github.com/user-attachments/assets/2bbc7bdd-5c48-4e3a-a7a8-e16fa3cf0bb7" />
 
 ## Fitur
 
