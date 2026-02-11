@@ -40,7 +40,7 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 groupId = 'com.github.Muhammad-Abid24'
-                artifactId = 'Show-Dialog'
+                artifactId = 'CustomAlert'
                 version = '1.0.0'
 
                 // Ambil AAR dari build output dengan task dependency
