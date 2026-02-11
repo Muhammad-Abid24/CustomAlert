@@ -221,7 +221,7 @@ SOFTWARE.
 
 ## Author
 
-**Muhammad Abid**
+**Muhammad Abid Misbahuddin**
 
 ## Changelog
 
