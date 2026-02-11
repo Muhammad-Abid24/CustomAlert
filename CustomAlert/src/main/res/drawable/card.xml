@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background gradient with primary and secondary colors -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="30dp" />
+            <gradient
+                android:angle="135"
+                android:startColor="#B3000000"
+                android:centerColor="#99808080"
+                android:endColor="#B3000000"
+                android:type="linear" />
+        </shape>
+    </item>
+
+    <!-- Glass effect overlay with subtle white gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="30dp" />
+            <gradient
+                android:angle="90"
+                android:startColor="#30FFFFFF"
+                android:centerColor="#15FFFFFF"
+                android:endColor="#40FFFFFF"
+                android:type="linear" />
+        </shape>
+    </item>
+
+    <!-- Subtle border/stroke -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="30dp" />
+            <stroke
+                android:width="1dp"
+                android:color="#40FFFFFF" />
+        </shape>
+    </item>
+</layer-list>
