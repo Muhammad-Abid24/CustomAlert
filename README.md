@@ -15,10 +15,10 @@ Sebuah library Android yang sederhana dan mudah digunakan untuk menampilkan dial
 
 ## Fitur
 
-- Dialog sederhana dengan satu baris kode
+- Dialog alert sederhana dengan satu baris kode
 - Kustomisasi penuh untuk card, button, dan gambar
 - Builder pattern untuk konfigurasi yang fleksibel
-- Mendukung listener saat dialog ditutup
+- Mendukung listener saat dialog alert ditutup
 - Menampilkan versi aplikasi secara otomatis
 - Background transparan dengan efek card
 
@@ -36,7 +36,7 @@ Tambahkan library ini ke dalam project Anda:
 
 ```kotlin
 dependencies {
-    implementation("com.abidmuhammad.showdialog:showdialog:1.0.0")
+    implementation("com.github.Muhammad-Abid24:CustomAlert:1.0.0")
 }
 ```
 
@@ -44,7 +44,7 @@ dependencies {
 
 ```groovy
 dependencies {
-    implementation 'com.abidmuhammad.showdialog:showdialog:1.0.0'
+    implementation 'com.github.Muhammad-Abid24:CustomAlert:1.0.0'
 }
 ```
 
@@ -53,28 +53,28 @@ dependencies {
 ### Penggunaan Dasar
 
 ```java
-// Tampilkan dialog dengan pesan default
-ShowDialog.show(context);
+// Tampilkan dialog alert dengan pesan default
+ShowCustomAlert.show(context);
 
-// Tampilkan dialog dengan pesan kustom
-ShowDialog.show(context, "Request Gagal, tidak dapat terhubung ke server.\nPeriksa koneksi internet Anda!");
+// Tampilkan dialog alert dengan pesan kustom
+ShowCustomAlert.show(context, "Request Gagal, tidak dapat terhubung ke server.\nPeriksa koneksi internet Anda!");
 ```
 
 ### Dengan Listener
 
 ```java
-ShowDialog.show(context, new ShowDialog.OnDismissListener() {
+ShowCustomAlert.show(context, new ShowCustomAlert.OnDismissListener() {
     @Override
     public void onDismiss() {
-        // Aksi saat dialog ditutup
+        // Aksi saat dialog alert ditutup
     }
 });
 
 // Atau dengan pesan kustom
-ShowDialog.show(context, "Pesan Anda", new ShowDialog.OnDismissListener() {
+ShowCustomAlert.show(context, "Pesan Anda", new ShowCustomAlert.OnDismissListener() {
     @Override
     public void onDismiss() {
-        // Aksi saat dialog ditutup
+        // Aksi saat dialog alert ditutup
     }
 });
 ```
@@ -82,15 +82,15 @@ ShowDialog.show(context, "Pesan Anda", new ShowDialog.OnDismissListener() {
 ### Menggunakan Builder (Kustomisasi Penuh)
 
 ```java
-new ShowDialog.Builder(context)
+new ShowCustomAlert(context)
+    .setTitle("Judul Alert")
     .setMessage("Pesan kustom Anda")
-    .setTitle("Judul Dialog")
     .setImageResource(R.drawable.ic_warning)
     .setCardBackgroundColor(R.color.bg_card)
     .setButtonBackgroundColor(R.color.bg_btn)
     .setButtonTextColorResource(R.color.text_btn)
     .setOnDismissListener(() -> {
-        // Aksi saat dialog ditutup
+        // Aksi saat dialog alert ditutup
     })
     .show();
 ```
@@ -99,13 +99,13 @@ new ShowDialog.Builder(context)
 
 ```java
 // Menggunakan resource drawable
-new ShowDialog.Builder(context)
+new ShowCustomAlert.Builder(context)
     .setImageResource(R.drawable.ic_success)
     .show();
 
 // Menggunakan Drawable
 Drawable drawable = ContextCompat.getDrawable(context, R.drawable.ic_error);
-new ShowDialog.Builder(context)
+new ShowCustomAlert.Builder(context)
     .setImageDrawable(drawable)
     .show();
 ```
@@ -116,17 +116,17 @@ new ShowDialog.Builder(context)
 
 | Metode | Deskripsi |
 |--------|-----------|
-| `show(Context)` | Menampilkan dialog dengan pesan default |
-| `show(Context, String)` | Menampilkan dialog dengan pesan kustom |
-| `show(Context, OnDismissListener)` | Menampilkan dialog dengan listener |
-| `show(Context, String, OnDismissListener)` | Menampilkan dialog dengan pesan dan listener |
+| `show(Context)` | Menampilkan dialog alert dengan pesan default |
+| `show(Context, String)` | Menampilkan dialog alert dengan pesan kustom |
+| `show(Context, OnDismissListener)` | Menampilkan dialog alert dengan listener |
+| `show(Context, String, OnDismissListener)` | Menampilkan dialog alert dengan pesan dan listener |
 
 ### Builder Methods
 
 | Metode | Deskripsi |
 |--------|-----------|
-| `setMessage(String)` | Mengatur pesan dialog |
-| `setTitle(String)` | Mengatur judul dialog |
+| `setMessage(String)` | Mengatur pesan alert |
+| `setTitle(String)` | Mengatur judul alert |
 | `setCardBackground(Drawable)` | Mengatur background card dengan Drawable |
 | `setCardBackgroundColor(int)` | Mengatur background card dengan resource color |
 | `setButtonBackground(Drawable)` | Mengatur background tombol dengan Drawable |
@@ -135,8 +135,8 @@ new ShowDialog.Builder(context)
 | `setButtonTextColorResource(int)` | Mengatur warna text tombol dengan resource color |
 | `setImageDrawable(Drawable)` | Mengatur gambar dengan Drawable |
 | `setImageResource(int)` | Mengatur gambar dengan resource drawable |
-| `setOnDismissListener(OnDismissListener)` | Mengatur listener saat dialog ditutup |
-| `show()` | Menampilkan dialog |
+| `setOnDismissListener(OnDismissListener)` | Mengatur listener saat dialog alert ditutup |
+| `show()` | Menampilkan dialog alert |
 
 ## Contoh Lengkap
 
@@ -148,19 +148,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Contoh 1: Dialog sederhana
+        // Contoh 1: Dialog alert sederhana
         findViewById(R.id.btn_simple).setOnClickListener(v -> {
-            ShowDialog.show(this);
+            ShowCustomAlert.show(this);
         });
 
-        // Contoh 2: Dialog dengan pesan kustom
+        // Contoh 2: Dialog alert dengan pesan kustom
         findViewById(R.id.btn_custom_message).setOnClickListener(v -> {
-            ShowDialog.show(this, "Data berhasil disimpan!");
+            ShowCustomAlert.show(this, "Data berhasil disimpan!");
         });
 
-        // Contoh 3: Dialog dengan listener
+        // Contoh 3: Dialog alert dengan listener
         findViewById(R.id.btn_with_listener).setOnClickListener(v -> {
-            ShowDialog.show(this, "Apakah Anda yakin?", new ShowDialog.OnDismissListener() {
+            ShowCustomAlert.show(this, "Apakah Anda yakin?", new ShowCustomAlert.OnDismissListener() {
                 @Override
                 public void onDismiss() {
                     finish();
@@ -168,19 +168,19 @@ public class MainActivity extends AppCompatActivity {
             });
         });
 
-        // Contoh 4: Dialog dengan kustomisasi penuh
+        // Contoh 4: Dialog alert dengan kustomisasi penuh
         findViewById(R.id.btn_full_custom).setOnClickListener(v -> {
-            new ShowDialog.Builder(this)
+            new ShowCustomAlert.Builder(this)
                 .setTitle("Success!")
                 .setMessage("Data berhasil disimpan ke database.")
                 .setImageResource(R.drawable.ic_success)
                 .setCardBackgroundColor(R.color.white)
                 .setButtonBackgroundColor(R.color.primary)
                 .setButtonTextColorResource(R.color.white)
-                .setOnDismissListener(new ShowDialog.OnDismissListener() {
+                .setOnDismissListener(new ShowCustomAlert.OnDismissListener() {
                     @Override
                     public void onDismiss() {
-                        Toast.makeText(MainActivity.this, "Dialog ditutup", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Dialog alert ditutup", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .show();
