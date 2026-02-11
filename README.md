@@ -28,16 +28,6 @@ Sebuah library Android yang sederhana dan mudah digunakan untuk menampilkan dial
 - Compile SDK: 36
 - Java: 11
 
-## Dependencies
-
-Library ini menggunakan dependencies berikut:
-
-| Library | Version |
-|---------|---------|
-| AndroidX AppCompat | 1.7.1 |
-| AndroidX ConstraintLayout | 2.2.1 |
-| Material Components | 1.13.0 |
-
 ## Installation
 
 Tambahkan library ini ke dalam project Anda:
