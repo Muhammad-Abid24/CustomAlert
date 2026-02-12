@@ -82,7 +82,7 @@ ShowCustomAlert.show(context, "Pesan Anda", new ShowCustomAlert.OnDismissListene
 ### Menggunakan Builder (Kustomisasi Penuh)
 
 ```java
-new ShowCustomAlert(context)
+new ew ShowCustomAlert.Builder(context)
     .setTitle("Judul Alert")
     .setMessage("Pesan kustom Anda")
     .setImageResource(R.drawable.ic_warning)
